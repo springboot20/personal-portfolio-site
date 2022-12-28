@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -15,7 +20,7 @@
     --color-danger: #f75842;
     --color-white: #fff;
     --color-black: #000;
-    --color-bg: #000033;
+    --color-bg: hsl(231, 24%, 16%);
     --color-bg2: #666666;
     --color-bg3: #660099;
     --color-bg4: #9999cc;
@@ -25,13 +30,14 @@
     --container-width-sm: 94%;
     --container-width-xm: 100%;
 }
+
 /* ******* SCROLLBAR STYLING ENDS ************* */
 
 
 body {
     background: var(--color-bg);
     color: var(--color-white);
-    font-family: sans-serif;
+    font-family: Ubuntu;
     line-height: 1.7;
 }
 
@@ -85,36 +91,105 @@ h4 {
 
 /************** Navbar Style *************/
 nav.nav {
+    width: 100%;
     position: fixed;
-    width: 100vw;
     top: 0;
     left: 0;
-    z-index: 11;
+    z-index: 99;
 }
 
-nav.show {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    background: var(--color-bg);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+nav .nav-container {
     height: 4rem;
-    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-logo a {
-    font-size: 1.7rem;
-    color: #e2dfdf;
+@media screen and (max-width:768px) {
+    nav .nav-container .nav-menu-bar {
+        padding: 2rem 1rem 1rem 1rem;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 40%;
+        height: 100%;
+        z-index: 99;
+        background: var(--color-primary);
+        font-weight: 600;
+        border-radius: 0 0.7rem 0.7rem 0;
+    }
 
 }
 
-.logo-icon {
-    font-size: 2rem;
-    color: #3022e6;
-    font-weight: bolder;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
+nav ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    height: 65px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+
+nav.nav ul li a:hover {
+    color: #11101d;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+nav ul li span.fa {
+    height: 45px;
+    min-width: 50px;
+    line-height: 45px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+/* **************************** MAIN SECTION STYLING ***********/
+main.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: url(../assets/bigpicture-05.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 2rem;
+}
+
+main.hero-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: hsla(0, 0%, 0%, 0.5);
+}
+
+main.hero-section .hero-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main.hero-section .hero-container .dev-img-container {
+    height: 265px;
+    width: 265px;
+}
+
+main.hero-section .hero-container img.dev-img {
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: contain;
 }
