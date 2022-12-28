@@ -1,6 +1,6 @@
 window.addEventListener("scroll", () => {
 	const nav = document.querySelector("nav");
-	nav.classList.toggle("nav-background", window.scrollY > 0);
+	nav.classList.toggle("show", window.scrollY > 0);
 });
 
 const openMenu = (toggleId, menuId) => {
