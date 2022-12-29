@@ -105,22 +105,22 @@ nav .nav-container {
     align-items: center;
 }
 
-@media screen and (max-width:768px) {
-    nav .nav-container .nav-menu-bar {
-        padding: 2rem 1rem 1rem 1rem;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 40%;
-        height: 100%;
-        z-index: 99;
-        background: var(--color-primary);
-        font-weight: 600;
-        border-radius: 0 0.7rem 0.7rem 0;
-    }
-
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.nav-logo a span.logo-name {
+    font-size: 1.5em;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.nav-logo a span.fa {
+    font-size: 2em;
+    font-weight: bold;
+}
 
 nav ul li {
     position: relative;
@@ -149,6 +149,18 @@ nav ul li span.fa {
     line-height: 45px;
     transition: all 0.2s ease;
     text-align: center;
+}
+
+.nav-btn button.toggle-btn {
+    background: transparent;
+    padding: 2rem;
+    color: var(--color-bg4);
+}
+
+.nav-btn button.toggle-btn span {
+    font-size: 2.5em;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 /* **************************** MAIN SECTION STYLING ***********/
@@ -192,4 +204,38 @@ main.hero-section .hero-container img.dev-img {
     max-width: 100%;
     border-radius: 50%;
     object-fit: contain;
+}
+
+main.hero-section .hero-container h2.dev-name {
+    font-size: 3em;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+main.hero-section .hero-container p.dev-role {
+    font-size: 2em;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width:768px) {
+    nav .nav-container .nav-menu-bar {
+        padding: 2rem 1rem 1rem 1rem;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 40%;
+        height: 100%;
+        z-index: 99;
+        background: var(--color-primary);
+        font-weight: 600;
+        border-radius: 0 0.7rem 0.7rem 0;
+    }
+
+    main.hero-section .hero-container .dev-img-container {
+        height: 400px;
+        width: 400px;
+    }
+
 }
