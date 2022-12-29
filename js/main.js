@@ -4,16 +4,24 @@ window.addEventListener("scroll", () => {
 });
 
 const openMenu = (toggleId, menuId) => {
-	const openBtn = document.querySelector(`#${toggleId}`);
-	const navMenu = document.querySelector(`#${menuId}`);
+	const openBtn = document.querySelector(`.${toggleId}`);
+	const navMenu = document.querySelector(`.${menuId}`);
 
 	if (openBtn && navMenu) {
 		openBtn.addEventListener("click", () => {
-			navMenu.classList.toggle("show");
+			navMenu.classList.add("show");
 		});
 	}
 };
-openMenu("open-menu-btn", "nav-list");
+openMenu("toggle-btn", "nav-list");
+
+const closeMenu = (closeBtnId) => {
+	const closeBtn = document.querySelector(`.${closeBtnId}`)
+	closeBtn.addEventListener('click', (e) => {
+		closeBtn.parentElement.classList.remove('show')
+	})
+}
+closeMenu('toggle-close-btn')
 
 const navLink = Array.from(document.querySelectorAll(".nav-menu li a"));
 
@@ -30,13 +38,13 @@ function scroll(e) {
 	});
 }
 
-const navLinks = document.querySelectorAll(".nav-link");
-console.log(navLinks);
-function linkAction() {
-	navLinks.forEach((n) => n.classList.remove("active"));
-	this.classList.add("active");
+// const navLinks = document.querySelectorAll(".nav-link");
+// console.log(navLinks);
+// function linkAction() {
+// 	navLinks.forEach((n) => n.classList.remove("active"));
+// 	this.classList.add("active");
 
-	const navMenu = document.querySelector(`#nav-list`);
-	navMenu.classList.remove("show");
-}
-navLinks.forEach((m) => m.addEventListener("click", linkAction));
+// 	const navMenu = document.querySelector(`#nav-list`);
+// 	navMenu.classList.remove("show");
+// }
+// navLinks.forEach((m) => m.addEventListener("click", linkAction));

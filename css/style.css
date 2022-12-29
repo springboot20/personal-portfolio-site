@@ -25,7 +25,7 @@
     --color-bg3: #660099;
     --color-bg4: #9999cc;
     --container-width-xl: 70%;
-    --container-width-lg: 80%;
+    --container-width-lg: 50%;
     --container-width-md: 90%;
     --container-width-sm: 94%;
     --container-width-xm: 100%;
@@ -93,13 +93,15 @@ h4 {
 nav.nav {
     width: 100%;
     position: fixed;
+    padding: 1rem;
     top: 0;
     left: 0;
+    height: 3.5rem;
     z-index: 99;
 }
 
 nav .nav-container {
-    height: 4rem;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -151,24 +153,41 @@ nav ul li span.fa {
     text-align: center;
 }
 
-.nav-btn button.toggle-btn {
-    background: transparent;
+button.toggle-btn,
+button.toggle-close-btn {
+    background: none;
     padding: 2rem;
     color: var(--color-bg4);
 }
 
-.nav-btn button.toggle-btn span {
+button.toggle-btn span,
+button.toggle-close-btn span {
     font-size: 2.5em;
     font-weight: 600;
     cursor: pointer;
+}
+
+button.toggle-close-btn span {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: 99;
+    color: var(--color-danger);
+    display: none;
+}
+
+nav .nav-container .nav-list.show {
+    left: 0;
+    transition: all 600ms ease-in-out;
 }
 
 /* **************************** MAIN SECTION STYLING ***********/
 main.hero-section {
     position: relative;
     min-height: 100vh;
-    background: url(../assets/bigpicture-05.png);
+    background: url(../assets/bigpicture_01.jpg);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     padding: 0 2rem;
 }
@@ -180,7 +199,7 @@ main.hero-section::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background: hsla(0, 0%, 0%, 0.5);
+    background: hsla(0, 0%, 0%, 0.6);
 }
 
 main.hero-section .hero-container {
@@ -188,6 +207,10 @@ main.hero-section .hero-container {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+.dev-infos {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -207,29 +230,97 @@ main.hero-section .hero-container img.dev-img {
 }
 
 main.hero-section .hero-container h2.dev-name {
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: 700;
     text-transform: capitalize;
 }
 
 main.hero-section .hero-container p.dev-role {
-    font-size: 2em;
+    font-size: 1.2em;
     text-transform: capitalize;
     font-weight: 500;
 }
 
+main.hero-section .bottom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0.4rem;
+    bottom: 10px;
+    gap: 0.51rem;
+}
 
-@media screen and (max-width:768px) {
-    nav .nav-container .nav-menu-bar {
-        padding: 2rem 1rem 1rem 1rem;
+main.hero-section .bottom .line {
+    display: block;
+    width: 45px;
+    height: 0.25rem;
+    background: var(--color-bg2);
+}
+
+main.hero-section .bottom span.scroll {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/************************ ABOUT STYLING ************************/
+.about-dev {
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.about-dev .about-dev-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-dev-container .about-dev-image {
+    height: 250px;
+    width: 250px;
+}
+
+.about-dev-container .about-dev-image img {
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-dev .about-dev-container .about-dev-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-dev-container .about-dev-infos .about-dev-bio {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 2rem;
+    border: 2px solid var(--color-danger);
+}
+
+@media screen and (max-width:576px) {
+
+    nav.nav {
+        height: calc(3.5rem + 1.5rem);
+        background: #11101d;
+    }
+
+    nav .nav-container .nav-list {
+        padding: 5rem 1rem 2rem 1rem;
         position: fixed;
-        top: 0;
+        top: 8.7%;
         left: -100%;
         width: 40%;
         height: 100%;
         z-index: 99;
         background: var(--color-primary);
         font-weight: 600;
+        transition: all 600ms ease-in-out;
         border-radius: 0 0.7rem 0.7rem 0;
     }
 
@@ -238,4 +329,135 @@ main.hero-section .hero-container p.dev-role {
         width: 400px;
     }
 
+    button.toggle-close-btn span {
+        display: block;
+    }
+
+    main.hero-section .hero-container h2.dev-name {
+        font-size: 1.8em;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    main.hero-section {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width:760px) {
+
+    nav.nav {
+        height: calc(3.5rem + 1.5rem);
+        background: #11101d;
+    }
+
+    nav .nav-container .nav-list {
+        padding: 5rem 1rem 2rem 1rem;
+        position: fixed;
+        top: 8.7%;
+        left: -100%;
+        width: 40%;
+        height: 100%;
+        z-index: 99;
+        background: var(--color-primary);
+        font-weight: 600;
+        transition: all 600ms ease-in-out;
+        border-radius: 0 0.7rem 0.7rem 0;
+    }
+
+    main.hero-section {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 0 2rem;
+    }
+
+    main.hero-section .hero-container .dev-img-container {
+        height: 400px;
+        width: 400px;
+    }
+
+    button.toggle-close-btn span {
+        display: block;
+    }
+
+    main.hero-section .hero-container h2.dev-name {
+        font-size: 1.8em;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+}
+
+@media screen and (min-width:768px) {
+    nav.nav {
+        background: #11101d;
+        height: calc(3.5rem + 1.5rem);
+    }
+
+    .nav-container {
+        height: 100%;
+    }
+
+    nav .nav-container .nav-list {
+        padding: 0;
+    }
+
+    .nav-container ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 0;
+        gap: 2rem;
+    }
+
+    nav ul li {
+        position: relative;
+        padding-left: 2rem;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    nav ul li span.fa {
+        display: none;
+    }
+
+    button.toggle-btn,
+    button.toggle-close-btn span {
+        display: none;
+    }
+
+    nav ul li a {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        transition: all 0.4s ease;
+        border-radius: 3px;
+        font-size: 1.5em;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    nav.nav ul li a:hover {
+        color: #67402a;
+        background: none;
+    }
+
+    main.hero-section .hero-container .dev-img-container {
+        height: 360px;
+        width: 360px;
+    }
+
+    main.hero-section .hero-container h2.dev-name {
+        font-size: 2.3em;
+    }
+
+    main.hero-section .hero-container p.dev-role {
+        font-size: 1.4em;
+    }
 }
