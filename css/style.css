@@ -322,7 +322,7 @@ main.hero-section .bottom span.scroll {
     position: absolute;
     content: "";
     left: 0;
-    bottom: 0;
+    top: 36px;
     width: 2.3em;
     height: 0.25rem;
     background: hsl(5, 84%, 66%);
@@ -372,9 +372,33 @@ section.service-section {
     min-height: 70vh;
     position: relative;
 }
-section.service-section .service-container{
+
+section.service-section .service-container {
     height: 100%;
 }
+
+section.service-section .service-container .service-dev-title {
+    font-size: 1.4em;
+    color: hsl(5, 84%, 66%);
+    margin-bottom: 6px;
+}
+
+section.service-section .service-container .service-title {
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 6px;
+}
+
+section.service-section .service-container .service-title::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 36px;
+    width: 2.3em;
+    height: 0.25rem;
+    background: hsl(5, 84%, 66%);
+}
+
 section.service-section .left {
     display: flex;
     position: absolute;
@@ -404,6 +428,7 @@ section.service-section .left .line {
     height: 0.16rem;
     background: hsl(5, 84%, 66%)
 }
+
 /********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:576px) {
 
