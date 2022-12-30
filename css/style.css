@@ -24,10 +24,10 @@
     --color-bg2: #666666;
     --color-bg3: #660099;
     --color-bg4: #9999cc;
-    --container-width-xl: 70%;
-    --container-width-lg: 50%;
-    --container-width-md: 90%;
-    --container-width-sm: 94%;
+    --container-width-xl: 1240px;
+    --container-width-lg: 1140px;
+    --container-width-md: 720px;
+    --container-width-sm: 720px;
     --container-width-xm: 100%;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .container {
-    width: var(--container-width-lg);
+    max-width: var(--container-width-lg);
     margin: 0 auto;
 }
 
@@ -265,20 +265,23 @@ main.hero-section .bottom span.scroll {
 
 /************************ ABOUT STYLING ************************/
 .about-dev {
-    min-height: 80vh;
+    position: relative;
+    min-height: 70vh;
     padding: 2rem;
 }
 
 .about-dev .about-dev-container {
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
 .about-dev-container .about-dev-image {
-    height: 250px;
-    width: 250px;
+    height: 350px;
+    width: 350px;
 }
 
 .about-dev-container .about-dev-image img {
@@ -289,20 +292,119 @@ main.hero-section .bottom span.scroll {
 }
 
 .about-dev .about-dev-container .about-dev-infos {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 3rem;
 }
 
 .about-dev-container .about-dev-infos .about-dev-bio {
-    max-width: 400px;
-    display: flex;
-    justify-content: space-between;
+    max-width: 550px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 1rem;
     gap: 2rem;
     border: 2px solid var(--color-danger);
 }
 
+.about-dev-infos .details .about-dev-title {
+    font-size: 1em;
+    color: hsl(5, 84%, 66%);
+    margin-bottom: 6px;
+}
+
+.about-dev-infos .details .about-title {
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 6px;
+}
+
+.about-dev-infos .details .about-title::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 2.3em;
+    height: 0.25rem;
+    background: hsl(5, 84%, 66%);
+}
+
+.about-dev-infos .details .about-dev-text {
+    padding: 1rem 0 0 0;
+    text-align: justify;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+section.about-dev .left {
+    display: flex;
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+
+section.about-dev .left {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+    right: 0;
+}
+
+section.about-dev .left .label {
+    font-size: 2em;
+    color: hsl(235, 19%, 23%);
+}
+
+section.about-dev .left .line {
+    display: block;
+    width: 35px;
+    height: 0.16rem;
+    background: hsl(5, 84%, 66%)
+}
+
+/**************** SERVICE STYLING ******************/
+section.service-section {
+    background: hsl(235, 25%, 19%);
+    padding: 1.5rem;
+    min-height: 70vh;
+    position: relative;
+}
+section.service-section .service-container{
+    height: 100%;
+}
+section.service-section .left {
+    display: flex;
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+
+section.service-section .left {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+    right: 0;
+}
+
+section.service-section .left .label {
+    font-size: 2em;
+    color: hsl(235, 19%, 23%);
+}
+
+section.service-section .left .line {
+    display: block;
+    width: 35px;
+    height: 0.16rem;
+    background: hsl(5, 84%, 66%)
+}
+/********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:576px) {
 
     nav.nav {
@@ -382,6 +484,13 @@ main.hero-section .bottom span.scroll {
         width: 400px;
     }
 
+    .about-dev-container .about-dev-image img {
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+    }
+
     button.toggle-close-btn span {
         display: block;
     }
@@ -395,6 +504,10 @@ main.hero-section .bottom span.scroll {
 }
 
 @media screen and (min-width:768px) {
+    .container {
+        max-width: var(--container-width-md);
+    }
+
     nav.nav {
         background: #11101d;
         height: calc(3.5rem + 1.5rem);
@@ -448,16 +561,66 @@ main.hero-section .bottom span.scroll {
         background: none;
     }
 
-    main.hero-section .hero-container .dev-img-container {
-        height: 360px;
-        width: 360px;
-    }
-
     main.hero-section .hero-container h2.dev-name {
         font-size: 2.3em;
     }
 
     main.hero-section .hero-container p.dev-role {
+        font-size: 1.4em;
+    }
+
+    .about-dev .about-dev-container {
+        height: 100%;
+        grid-template-columns: 50% 50%;
+        gap: 1rem;
+    }
+
+    .about-dev .about-dev-container .about-dev-infos {
+        max-width: 750px;
+    }
+
+    main.hero-section .hero-container .dev-img-container {
+        height: 400px;
+        width: 400px;
+    }
+
+    .about-dev-container .about-dev-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .container {
+        max-width: var(--container-width-lg);
+    }
+
+    .about-dev-container .about-dev-image {
+        height: 550px;
+        width: 450px;
+    }
+
+    .about-dev-container .about-dev-image img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about-dev .about-dev-container {
+        height: 100%;
+        grid-template-columns: 40% 60%;
+        gap: 2rem;
+    }
+
+    .about-dev-container .about-dev-infos .about-dev-bio {
+        max-width: 650px;
+        line-height: 40px;
+        min-height: 200px;
+        gap: 2.5rem;
         font-size: 1.4em;
     }
 }
