@@ -20,7 +20,7 @@
     --color-danger: #f75842;
     --color-white: #fff;
     --color-black: #000;
-    --color-bg: hsl(231, 24%, 16%);
+    --color-bg: hsl(231, 26%, 16%);
     --color-bg2: #666666;
     --color-bg3: #660099;
     --color-bg4: #9999cc;
@@ -119,7 +119,7 @@ nav .nav-container {
     font-weight: 600;
 }
 
-.nav-logo a span.fa {
+.nav-logo a span.bx {
     font-size: 2em;
     font-weight: bold;
 }
@@ -145,12 +145,13 @@ nav.nav ul li a:hover {
     background: rgba(255, 255, 255, 0.4);
 }
 
-nav ul li span.fa {
+nav ul li span.bx {
     height: 45px;
     min-width: 50px;
     line-height: 45px;
     transition: all 0.2s ease;
     text-align: center;
+    font-size: 1.3em;
 }
 
 button.toggle-btn,
@@ -162,7 +163,7 @@ button.toggle-close-btn {
 
 button.toggle-btn span,
 button.toggle-close-btn span {
-    font-size: 2.5em;
+    font-size: 4em;
     font-weight: 600;
     cursor: pointer;
 }
@@ -266,8 +267,8 @@ main.hero-section .bottom span.scroll {
 /************************ ABOUT STYLING ************************/
 .about-dev {
     position: relative;
-    min-height: 70vh;
-    padding: 2rem;
+    min-height: 95vh;
+    padding: 2.5rem;
 }
 
 .about-dev .about-dev-container {
@@ -298,7 +299,7 @@ main.hero-section .bottom span.scroll {
 }
 
 .about-dev-container .about-dev-infos .about-dev-bio {
-    max-width: 550px;
+    max-width: 750px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
@@ -368,8 +369,8 @@ section.about-dev .left .line {
 /**************** SERVICE STYLING ******************/
 section.service-section {
     background: hsl(235, 25%, 19%);
-    padding: 1.5rem;
-    min-height: 70vh;
+    padding: 2.5rem;
+    min-height: 95vh;
     position: relative;
 }
 
@@ -429,6 +430,47 @@ section.service-section .left .line {
     background: hsl(5, 84%, 66%)
 }
 
+section.service-section .service-container .service-grid {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.service-grid .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    min-height: 150px;
+    min-width: 100px;
+    padding: 1rem;
+    background: hsl(231, 25%, 18%);
+    box-shadow: 0 0 6px hsl(0, 0%, 0%, 0.4);
+}
+
+.service-grid .card span.bx {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #f75842;
+}
+
+.service-grid .card .card-body {
+    margin-top: 2rem;
+    padding: 0.5rem;
+}
+
+.service-grid .card .card-body h3.card-title {
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+}
+
+.service-grid .card .card-body p.card-text {
+    font-size: 1.2em;
+    margin-top: 1rem;
+    color: #6c63ff;
+    text-align: justify;
+}
+
 /********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:576px) {
 
@@ -457,7 +499,7 @@ section.service-section .left .line {
     }
 
     button.toggle-close-btn span {
-        display: block;
+        display: none;
     }
 
     main.hero-section .hero-container h2.dev-name {
@@ -472,6 +514,12 @@ section.service-section .left .line {
         background-position: center;
         background-size: cover;
         padding: 0 2rem;
+    }
+
+    .card {
+        min-height: 250px;
+        min-width: 250px;
+        padding: 1rem;
     }
 }
 
@@ -561,7 +609,7 @@ section.service-section .left .line {
         line-height: 20px;
     }
 
-    nav ul li span.fa {
+    nav ul li span.bx {
         display: none;
     }
 
@@ -616,6 +664,12 @@ section.service-section .left .line {
         object-fit: cover;
         object-position: center;
     }
+
+    .card {
+        min-height: 250px;
+        min-width: 250px;
+        padding: 1rem;
+    }
 }
 
 @media screen and (min-width:1400px) {
@@ -647,5 +701,24 @@ section.service-section .left .line {
         min-height: 200px;
         gap: 2.5rem;
         font-size: 1.4em;
+    }
+
+
+    section.service-section .service-container .service-grid {
+        margin-top: 3.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .card {
+        height: 285px;
+        min-width: 300px;
+        padding: 2rem;
+    }
+
+    .service-grid .card .card-body {
+        margin-top: 3rem;
+        padding: 0.5rem;
     }
 }

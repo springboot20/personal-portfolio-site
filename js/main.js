@@ -23,7 +23,7 @@ const closeMenu = (closeBtnId) => {
 }
 closeMenu('toggle-close-btn')
 
-const navLink = Array.from(document.querySelectorAll(".nav-menu li a"));
+const navLink = Array.from(document.querySelectorAll(".nav-list li a"));
 
 navLink.forEach((link) => {
 	link.addEventListener("click", scroll);
