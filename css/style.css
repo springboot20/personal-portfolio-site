@@ -194,7 +194,7 @@ nav .nav-container .nav-list.show {
 /* **************************** MAIN SECTION STYLING ***********/
 main.hero-section {
     position: relative;
-    min-height: 90vh;
+    min-height: 100vh;
     background: url(../assets/bigpicture_01.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -681,9 +681,11 @@ section.contact-section .contact-container .contact-means {
 .contact-means .contact-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
 }
 
 .contact-details .contact {
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -718,24 +720,29 @@ form#form .form-control {
 }
 
 form#form .form-control input {
-    padding: 1rem 4rem;
+    width: 255px;
+    padding: 1rem 2rem;
     background: transparent;
     border: 1px solid #e74c3c;
+    caret-color: #fff;
+    color: #ccc;
     border-radius: 0.4rem;
 }
 
 form#form .textarea textarea {
     background: transparent;
+    caret-color: #fff;
+    color: #ccc;
     border: 1px solid #e74c3c;
     border-radius: 0.4rem;
-    width: 550px;
+    width: 520px;
     padding: 1rem;
 }
 
 /******************************* FOOTER STYLING **************************/
 footer.footer-section {
     padding: 1rem;
-    height: 5rem;
+    height: 6rem;
     background: hsl(235, 19%, 23%);
 }
 
@@ -860,6 +867,9 @@ footer.footer-section {
         text-transform: capitalize;
     }
 
+    .footer-section .footer-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -972,6 +982,10 @@ footer.footer-section {
         min-width: 250px;
         padding: 1rem;
     }
+
+    .footer-section .footer-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (min-width:1400px) {
@@ -1046,6 +1060,10 @@ footer.footer-section {
         height: 0.16rem;
     }
 
+    section.contact-section {
+        padding: 4rem;
+    }
+
     section.contact-section .contact-container .contact-means {
         grid-template-columns: 40% 60%;
         gap: 4rem;
@@ -1062,9 +1080,11 @@ footer.footer-section {
         flex-direction: row;
         align-items: center;
     }
-        .contact-details .contact .contact-label {
-            display: flex;
-            text-align: justify;
-            flex-direction: column;
-        }
+
+    .contact-details .contact .contact-label {
+        display: flex;
+        text-align: justify;
+        flex-direction: column;
+    }
+
 }
