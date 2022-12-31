@@ -591,11 +591,7 @@ section.service-section .service-container .service-grid {
     cursor: pointer;
     bottom: 10px;
     right: 20px;
-    transition: all 300ms ease-in-out;
-    animation: left 2s linear infinite;
 }
-
-@keyframes left {}
 
 .service-grid .card .card-body {
     margin-top: 2rem;
@@ -666,6 +662,10 @@ section.service-section .shape-02::after {
 }
 
 /************************* CONTACT STYLING **********************/
+section.contact-section {
+    position: relative;
+}
+
 section.contact-section .contact-container {
     height: 100%;
 }
@@ -690,6 +690,22 @@ section.contact-section .contact-container .contact-means {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+section.contact-section .contact-container .contact-title {
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 6px;
+}
+
+section.contact-section .contact-container .contact-title::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 40px;
+    width: 2.3em;
+    height: 0.25rem;
+    background: hsl(5, 84%, 66%);
 }
 
 .contact-details .contact .contact-label {
@@ -737,6 +753,29 @@ form#form .textarea textarea {
     border-radius: 0.4rem;
     width: 520px;
     padding: 1rem;
+}
+
+section.contact-section .left {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+    right: 0;
+}
+
+section.contact-section .left .label {
+    font-size: 2em;
+    color: hsl(235, 19%, 23%);
+}
+
+section.contact-section .left .line {
+    display: block;
+    width: 35px;
+    height: 0.16rem;
+    background: hsl(5, 84%, 66%)
 }
 
 /******************************* FOOTER STYLING **************************/
@@ -1060,6 +1099,17 @@ footer.footer-section {
         height: 0.16rem;
     }
 
+    section.contact-section .left .label {
+        font-size: 2.5em;
+        font-weight: 800;
+    }
+
+    section.contact-section .left .line {
+        display: block;
+        width: 70px;
+        height: 0.16rem;
+    }
+
     section.contact-section {
         padding: 4rem;
     }
@@ -1087,4 +1137,7 @@ footer.footer-section {
         flex-direction: column;
     }
 
+    .footer-section .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
