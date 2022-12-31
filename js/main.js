@@ -38,13 +38,12 @@ function scroll(e) {
 	});
 }
 
-// const navLinks = document.querySelectorAll(".nav-link");
-// console.log(navLinks);
-// function linkAction() {
-// 	navLinks.forEach((n) => n.classList.remove("active"));
-// 	this.classList.add("active");
+const navLinks = document.querySelectorAll(".nav-link");;
+function linkAction() {
+	navLinks.forEach((n) => n.classList.remove("active"));
+	this.classList.add("active");
 
-// 	const navMenu = document.querySelector(`#nav-list`);
-// 	navMenu.classList.remove("show");
-// }
-// navLinks.forEach((m) => m.addEventListener("click", linkAction));
+	const navMenu = document.querySelector(`.nav-list`);
+	navMenu.classList.remove("show");
+}
+navLinks.forEach((m) => m.addEventListener("click", linkAction));

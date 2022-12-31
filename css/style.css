@@ -100,6 +100,10 @@ nav.nav {
     z-index: 99;
 }
 
+nav.nav.show {
+    background: rgba(0, 0, 0, .7);
+}
+
 nav .nav-container {
     height: 100%;
     display: flex;
@@ -120,7 +124,7 @@ nav .nav-container {
 }
 
 .nav-logo a span.bx {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -131,6 +135,7 @@ nav ul li {
 }
 
 nav ul li a {
+    position: relative;
     display: flex;
     align-items: center;
     text-align: center;
@@ -200,7 +205,7 @@ main.hero-section::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background: hsla(0, 0%, 0%, 0.6);
+    background: hsla(0, 0%, 0%, 0.7);
 }
 
 main.hero-section .hero-container {
@@ -264,6 +269,80 @@ main.hero-section .bottom span.scroll {
     font-weight: 400;
 }
 
+main.hero-section .shape-01 {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #6c63ff;
+    transform: translateY(-25%);
+    backdrop-filter: blur(5px);
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+main.hero-section .shape-02 {
+    position: absolute;
+    border: 2px solid transparent;
+    left: 5%;
+    top: 25%;
+    height: 100px;
+    width: 100px;
+    border-top-color: #6c63ff;
+    border-bottom-color: #f9c922;
+    border-radius: 50%;
+    transform: translateY(-25%);
+    animation: rotate 4s linear infinite;
+}
+
+
+main.hero-section .shape-02::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #e74c3c;
+    border-bottom-color: #e74c3c;
+
+    -webkit-animation: rotate 3s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 3s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+main.hero-section .shape-02::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #f9c922;
+    border-bottom-color: #f9c922;
+
+    -webkit-animation: rotate 2.5s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 2.5s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
 /************************ ABOUT STYLING ************************/
 .about-dev {
     position: relative;
@@ -278,6 +357,7 @@ main.hero-section .bottom span.scroll {
     place-items: center;
     grid-template-columns: 1fr;
     gap: 2rem;
+    z-index: 99;
 }
 
 .about-dev-container .about-dev-image {
@@ -366,6 +446,57 @@ section.about-dev .left .line {
     background: hsl(5, 84%, 66%)
 }
 
+section.about-dev .shape-02 {
+    position: absolute;
+    border: 2px solid transparent;
+    left: 70%;
+    top: 10%;
+    height: 100px;
+    width: 100px;
+    border-top-color: #6c63ff;
+    border-bottom-color: #f9c922;
+    border-radius: 50%;
+    transform: translateY(-10%) translateX(-70%);
+    animation: rotate 4s linear infinite;
+}
+
+
+section.about-dev .shape-02::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #e74c3c;
+    border-bottom-color: #e74c3c;
+
+    -webkit-animation: rotate 3s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 3s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+section.about-dev .shape-02::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #f9c922;
+    border-bottom-color: #f9c922;
+
+    -webkit-animation: rotate 2.5s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 2.5s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
 /**************** SERVICE STYLING ******************/
 section.service-section {
     background: hsl(235, 25%, 19%);
@@ -394,7 +525,7 @@ section.service-section .service-container .service-title::after {
     position: absolute;
     content: "";
     left: 0;
-    top: 36px;
+    top: 40px;
     width: 2.3em;
     height: 0.25rem;
     background: hsl(5, 84%, 66%);
@@ -438,9 +569,10 @@ section.service-section .service-container .service-grid {
 }
 
 .service-grid .card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 0.3rem;
+    border-radius: 0.6rem;
     min-height: 150px;
     min-width: 100px;
     padding: 1rem;
@@ -453,6 +585,17 @@ section.service-section .service-container .service-grid {
     font-weight: 400;
     color: #f75842;
 }
+
+.service-grid .card span.bx-right-arrow-alt {
+    position: absolute;
+    cursor: pointer;
+    bottom: 10px;
+    right: 20px;
+    transition: all 300ms ease-in-out;
+    animation: left 2s linear infinite;
+}
+
+@keyframes left {}
 
 .service-grid .card .card-body {
     margin-top: 2rem;
@@ -471,12 +614,62 @@ section.service-section .service-container .service-grid {
     text-align: justify;
 }
 
+section.service-section .shape-02 {
+    position: absolute;
+    border: 2px solid transparent;
+    left: 5%;
+    top: 25%;
+    height: 100px;
+    width: 100px;
+    border-top-color: #6c63ff;
+    border-bottom-color: #f9c922;
+    border-radius: 50%;
+    transform: translateY(-25%);
+    animation: rotate 4s linear infinite;
+}
+
+
+section.service-section .shape-02::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #e74c3c;
+    border-bottom-color: #e74c3c;
+
+    -webkit-animation: rotate 3s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 3s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+section.service-section .shape-02::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #f9c922;
+    border-bottom-color: #f9c922;
+
+    -webkit-animation: rotate 2.5s linear infinite;
+    /* Chrome, Opera 15+, Safari 5+ */
+    animation: rotate 2.5s linear infinite;
+    /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
 /********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:576px) {
 
     nav.nav {
         height: calc(3.5rem + 1.5rem);
-        background: #11101d;
     }
 
     nav .nav-container .nav-list {
@@ -527,7 +720,6 @@ section.service-section .service-container .service-grid {
 
     nav.nav {
         height: calc(3.5rem + 1.5rem);
-        background: #11101d;
     }
 
     nav .nav-container .nav-list {
@@ -582,7 +774,6 @@ section.service-section .service-container .service-grid {
     }
 
     nav.nav {
-        background: #11101d;
         height: calc(3.5rem + 1.5rem);
     }
 
@@ -632,6 +823,24 @@ section.service-section .service-container .service-grid {
     nav.nav ul li a:hover {
         color: #67402a;
         background: none;
+    }
+
+    nav.nav ul li a:hover::after {
+        position: absolute;
+        content: " ";
+        top: 25px;
+        height: 0.17rem;
+        width: 100%;
+        background-color: #6c6;
+    }
+
+    nav ul li a.active::after {
+        position: absolute;
+        content: " ";
+        top: 25px;
+        height: 0.17rem;
+        width: 100%;
+        background-color: #6c6;
     }
 
     main.hero-section .hero-container h2.dev-name {
@@ -691,16 +900,16 @@ section.service-section .service-container .service-grid {
 
     .about-dev .about-dev-container {
         height: 100%;
-        grid-template-columns: 40% 60%;
-        gap: 2rem;
+        grid-template-columns: 35% 65%;
+        gap: 6rem;
     }
 
     .about-dev-container .about-dev-infos .about-dev-bio {
-        max-width: 650px;
+        max-width: 750px;
         line-height: 40px;
         min-height: 200px;
         gap: 2.5rem;
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
 
@@ -720,5 +929,27 @@ section.service-section .service-container .service-grid {
     .service-grid .card .card-body {
         margin-top: 3rem;
         padding: 0.5rem;
+    }
+
+    section.about-dev .left .label {
+        font-size: 2.5em;
+        font-weight: 800;
+    }
+
+    section.about-dev .left .line {
+        display: block;
+        width: 70px;
+        height: 0.16rem;
+    }
+
+    section.service-section .left .label {
+        font-size: 2.5em;
+        font-weight: 800;
+    }
+
+    section.service-section .left .line {
+        display: block;
+        width: 70px;
+        height: 0.16rem;
     }
 }
