@@ -665,6 +665,32 @@ section.service-section .shape-02::after {
     /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
+/******************************* FOOTER STYLING **************************/
+footer.footer-section {
+    padding: 1rem;
+    height: 5rem;
+    background: hsl(235, 19%, 23%);
+}
+
+.footer-section .footer-container {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: 60% 40%;
+}
+
+.footer-section .footer-container .footer-social-links a {
+    margin-left: 2rem;
+    font-size: 1.6em;
+    transition: all 600ms ease;
+}
+
+.footer-social-links a:hover {
+    color: #f75842;
+    transform: scale(0.9);
+}
+
 /********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:576px) {
 
@@ -853,7 +879,6 @@ section.service-section .shape-02::after {
 
     .about-dev .about-dev-container {
         height: 100%;
-        grid-template-columns: 50% 50%;
         gap: 1rem;
     }
 
