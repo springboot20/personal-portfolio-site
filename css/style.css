@@ -57,6 +57,10 @@ a {
     font-size: 1rem;
 }
 
+section {
+    padding: 6rem;
+}
+
 h1,
 h2,
 h3,
@@ -190,7 +194,7 @@ nav .nav-container .nav-list.show {
 /* **************************** MAIN SECTION STYLING ***********/
 main.hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
     background: url(../assets/bigpicture_01.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -346,8 +350,6 @@ main.hero-section .shape-02::after {
 /************************ ABOUT STYLING ************************/
 .about-dev {
     position: relative;
-    min-height: 95vh;
-    padding: 2.5rem;
 }
 
 .about-dev .about-dev-container {
@@ -500,8 +502,6 @@ section.about-dev .shape-02::after {
 /**************** SERVICE STYLING ******************/
 section.service-section {
     background: hsl(235, 25%, 19%);
-    padding: 2.5rem;
-    min-height: 95vh;
     position: relative;
 }
 
@@ -665,6 +665,73 @@ section.service-section .shape-02::after {
     /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
+/************************* CONTACT STYLING **********************/
+section.contact-section .contact-container {
+    height: 100%;
+}
+
+section.contact-section .contact-container .contact-means {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    place-content: center;
+    gap: 4rem;
+}
+
+.contact-means .contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-details .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-details .contact .contact-label {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.contact-details .contact .icon {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+}
+
+.contact-details .contact .icon span.bx {
+    font-size: 1.62em;
+}
+
+form#form .form-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+form#form .form-control input {
+    padding: 1rem 4rem;
+    background: transparent;
+    border: 1px solid #e74c3c;
+    border-radius: 0.4rem;
+}
+
+form#form .textarea textarea {
+    background: transparent;
+    border: 1px solid #e74c3c;
+    border-radius: 0.4rem;
+    width: 550px;
+    padding: 1rem;
+}
+
 /******************************* FOOTER STYLING **************************/
 footer.footer-section {
     padding: 1rem;
@@ -686,9 +753,10 @@ footer.footer-section {
     transition: all 600ms ease;
 }
 
-.footer-social-links a:hover {
+.footer-social-links a:hover>span {
     color: #f75842;
-    transform: scale(0.9);
+    transform: scale(1.2);
+    transition: all 600ms ease;
 }
 
 /********************** MEDIA QUERIES ************************************/
@@ -977,4 +1045,26 @@ footer.footer-section {
         width: 70px;
         height: 0.16rem;
     }
+
+    section.contact-section .contact-container .contact-means {
+        grid-template-columns: 40% 60%;
+        gap: 4rem;
+    }
+
+    .contact-means .contact-details {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact-details .contact {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+        .contact-details .contact .contact-label {
+            display: flex;
+            text-align: justify;
+            flex-direction: column;
+        }
 }
