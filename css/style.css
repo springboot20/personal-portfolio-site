@@ -223,9 +223,9 @@ main.hero-section .hero-container {
 
 .dev-infos {
     position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -373,6 +373,7 @@ button {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
+
 main.hero-section .shape-02 {
     position: absolute;
     border: 2px solid transparent;
@@ -894,6 +895,10 @@ footer.footer-section {
 
 /********************** MEDIA QUERIES ************************************/
 @media screen and (max-width:425px) {
+    section {
+        padding: calc(6rem / 2);
+    }
+
     .contact-means .contact-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -923,6 +928,10 @@ footer.footer-section {
 }
 
 @media screen and (max-width:576px) {
+    section {
+        padding: calc(6rem - 2rem);
+    }
+
     nav.nav {
         height: calc(4.5rem + 1.5rem);
     }
@@ -972,6 +981,9 @@ footer.footer-section {
 }
 
 @media screen and (max-width:760px) {
+    section {
+        padding: 4rem;
+    }
 
     nav.nav {
         height: calc(4.5rem + 1.5rem);
@@ -1032,6 +1044,10 @@ footer.footer-section {
         max-width: var(--container-width-md);
     }
 
+    section {
+        padding: 4rem;
+    }
+
     nav.nav {
         height: calc(4.5rem + 1.5rem);
     }
@@ -1064,7 +1080,7 @@ footer.footer-section {
     }
 
     button.toggle-btn,
-        button.toggle-close-btn {
+    button.toggle-close-btn {
         display: none;
     }
 
@@ -1117,6 +1133,18 @@ footer.footer-section {
 
     .about-dev .about-dev-container .about-dev-infos {
         max-width: 750px;
+    }
+
+    .about-dev-infos .details .about-title::after {
+        top: 42px;
+    }
+
+    section.service-section .service-container .service-title::after {
+        top: 42px;
+    }
+
+    section.contact-section .contact-container .contact-title::after {
+        top: 42px;
     }
 
     main.hero-section .hero-container .dev-img-container {
