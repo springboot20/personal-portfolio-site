@@ -39,6 +39,7 @@ body {
     color: var(--color-white);
     font-family: Ubuntu;
     line-height: 1.7;
+    /* overflow: hidden; */
 }
 
 .container {
@@ -166,7 +167,7 @@ nav ul li span.bx {
 button.toggle-btn,
 button.toggle-close-btn {
     background: none;
-    padding: 2rem;
+    padding: 8px;
     color: var(--color-bg4);
 }
 
@@ -221,6 +222,10 @@ main.hero-section .hero-container {
 }
 
 .dev-infos {
+    position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -231,6 +236,7 @@ main.hero-section .hero-container {
 main.hero-section .hero-container .dev-img-container {
     height: 265px;
     width: 265px;
+    z-index: 1;
 }
 
 main.hero-section .hero-container img.dev-img {
@@ -279,7 +285,7 @@ main.hero-section .shape-01 {
     top: 25%;
     height: 50px;
     width: 50px;
-    border: 1px solid #6c63ff;
+    border: 2px solid #6c63ff;
     transform: translateY(-25%);
     backdrop-filter: blur(5px);
     animation: rotate 5s linear infinite;
@@ -296,6 +302,77 @@ main.hero-section .shape-01 {
 }
 
 
+.card-img img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 0, 0.31);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.card-label {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    width: 50px;
+    padding: 5px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card-label {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.card-label span {
+    text-align: center;
+    color: #fff;
+    margin: 10px;
+}
+
+.card-title {
+    padding: 10px;
+}
+
+.card-title h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.card-description {
+    padding: 15px;
+}
+
+.card-description p {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.card-button {
+    margin-left: 10px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 0.7em;
+    color: #fff;
+    padding: .35rem .65rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
 main.hero-section .shape-02 {
     position: absolute;
     border: 2px solid transparent;
@@ -502,6 +579,7 @@ section.about-dev .shape-02::after {
 /**************** SERVICE STYLING ******************/
 section.service-section {
     background: hsl(235, 25%, 19%);
+    box-shadow: inset 0 0 3rem rgb(22, 23, 38);
     position: relative;
 }
 
@@ -664,7 +742,7 @@ section.service-section .shape-02::after {
 /************************* CONTACT STYLING **********************/
 section.contact-section {
     position: relative;
-    box-shadow: inset 0 0 7px sandybrown;
+    box-shadow: inset 0 0 3rem rgb(22, 23, 38);
 }
 
 section.contact-section .contact-container {
@@ -986,7 +1064,7 @@ footer.footer-section {
     }
 
     button.toggle-btn,
-    button.toggle-close-btn span {
+        button.toggle-close-btn {
         display: none;
     }
 
