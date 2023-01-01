@@ -100,7 +100,7 @@ nav.nav {
     padding: 1rem;
     top: 0;
     left: 0;
-    height: 3.5rem;
+    height: 4.5rem;
     z-index: 99;
 }
 
@@ -664,6 +664,7 @@ section.service-section .shape-02::after {
 /************************* CONTACT STYLING **********************/
 section.contact-section {
     position: relative;
+    box-shadow: inset 0 0 7px sandybrown;
 }
 
 section.contact-section .contact-container {
@@ -685,7 +686,6 @@ section.contact-section .contact-container .contact-means {
 }
 
 .contact-details .contact {
-    max-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -714,7 +714,12 @@ section.contact-section .contact-container .contact-title::after {
     flex-direction: column;
 }
 
+.contact-details .contact .contact-label span.label-text {
+    font-size: 1em;
+}
+
 .contact-details .contact .icon {
+    position: relative;
     height: 45px;
     width: 45px;
     line-height: 45px;
@@ -724,6 +729,10 @@ section.contact-section .contact-container .contact-title::after {
 }
 
 .contact-details .contact .icon span.bx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1.62em;
 }
 
@@ -806,21 +815,49 @@ footer.footer-section {
 }
 
 /********************** MEDIA QUERIES ************************************/
-@media screen and (max-width:576px) {
+@media screen and (max-width:425px) {
+    .contact-means .contact-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        place-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        white-space: nowrap;
+    }
 
+    form#form .form-control {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    form#form .textarea textarea {
+        width: 360px;
+    }
+
+    form#form .form-control input {
+        width: 355px;
+    }
+}
+
+@media screen and (max-width:576px) {
     nav.nav {
-        height: calc(3.5rem + 1.5rem);
+        height: calc(4.5rem + 1.5rem);
     }
 
     nav .nav-container .nav-list {
         padding: 5rem 1rem 2rem 1rem;
         position: fixed;
-        top: 8.7%;
+        top: 0;
         left: -100%;
         width: 40%;
         height: 100%;
         z-index: 99;
-        background: var(--color-primary);
+        background: linear-gradient(hsla(0, 0%, 0%, 0.9), var(--color-primary));
         font-weight: 600;
         transition: all 600ms ease-in-out;
         border-radius: 0 0.7rem 0.7rem 0;
@@ -859,18 +896,19 @@ footer.footer-section {
 @media screen and (max-width:760px) {
 
     nav.nav {
-        height: calc(3.5rem + 1.5rem);
+        height: calc(4.5rem + 1.5rem);
     }
 
     nav .nav-container .nav-list {
         padding: 5rem 1rem 2rem 1rem;
         position: fixed;
-        top: 8.7%;
+        top: 0;
         left: -100%;
         width: 40%;
         height: 100%;
         z-index: 99;
-        background: var(--color-primary);
+        /* background: var(--color-primary); */
+        background: linear-gradient(hsla(0, 0%, 0%, 0.9), var(--color-primary));
         font-weight: 600;
         transition: all 600ms ease-in-out;
         border-radius: 0 0.7rem 0.7rem 0;
@@ -917,7 +955,7 @@ footer.footer-section {
     }
 
     nav.nav {
-        height: calc(3.5rem + 1.5rem);
+        height: calc(4.5rem + 1.5rem);
     }
 
     .nav-container {
@@ -1115,20 +1153,22 @@ footer.footer-section {
     }
 
     section.contact-section .contact-container .contact-means {
+        padding: 10px;
         grid-template-columns: 40% 60%;
         gap: 4rem;
     }
 
     .contact-means .contact-details {
         display: grid;
-        gap: 3rem;
         grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
     }
 
     .contact-details .contact {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        text-align: center;
+        white-space: nowrap;
     }
 
     .contact-details .contact .contact-label {
